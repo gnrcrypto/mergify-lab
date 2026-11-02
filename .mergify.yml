@@ -5,4 +5,11 @@ pull_request_rules:
     actions:
       label:
         add:
-          - redos-probe
+          - redos-matched
+  - name: always-probe
+    conditions:
+      - base=main
+    actions:
+      label:
+        add:
+          - probe-fired
