@@ -1,0 +1,12 @@
+queue_rules:
+  - name: default
+    conditions:
+      - check-success=ci/test
+
+pull_request_rules:
+  - name: auto-merge test PRs
+    conditions:
+      - base=main
+    actions:
+      queue:
+        name: default
