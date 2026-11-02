@@ -1,12 +1,8 @@
-queue_rules:
-  - name: default
-    conditions:
-      - check-success=ci/test
-
 pull_request_rules:
-  - name: auto-merge test PRs
+  - name: redos-probe
     conditions:
-      - base=main
+      - 'title~=(a+)+$'
     actions:
-      queue:
-        name: default
+      label:
+        add:
+          - redos-probe
